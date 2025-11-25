@@ -1,38 +1,269 @@
-.inventorius-container {
-  padding: 20px;
-  font-family: sans-serif;
+body {
+  background: #020617; /* page background */
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e5e7eb;
 }
+
+/* Page center */
+
+.inventorius-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: flex-start;   /* a bit from top */
+  padding: 48px 16px;
+  box-sizing: border-box;
+}
+
+/* Card */
+
+.inventorius-card {
+  width: 100%;
+  max-width: 960px;
+  background: #020617;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #1f2937, 0 18px 40px rgba(0, 0, 0, 0.7);
+  padding: 24px 24px 32px;
+  box-sizing: border-box;
+}
+
+/* Header: title left, tabs right */
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* Tabs */
+
+.tabs-row {
+  display: inline-flex;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 999px;
+  background-color: #020617;
+  border: 1px solid #111827;
+  margin-top: 8px;
+}
+
+.tab-button {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+  border: none;
+  background-color: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    transform 0.08s ease;
+}
+
+.tab-button:hover {
+  background-color: #0b1120;
+  color: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.tab-button-active {
+  background-color: #1d4ed8;
+  color: #f9fafb;
+  box-shadow: 0 0 0 1px #1d4ed8, 0 0 15px rgba(37, 99, 235, 0.6);
+}
+
+/* Section titles */
+
+.section-title {
+  margin: 24px 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #cbd5f5;
+}
+
+/* Button row */
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Buttons */
+
+.btn {
+  border-radius: 6px;
+  border: 1px solid #374151;
+  padding: 6px 14px;
+  font-size: 14px;
+  background: #020617;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease, transform 0.08s ease;
+}
+
+.btn.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #f9fafb;
+}
+
+.btn.danger {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #f9fafb;
+}
+
+.btn:hover:not(:disabled) {
+  background: #0b1120;
+  transform: translateY(-1px);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.btn.danger:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Table */
 
 .inventorius-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 16px;
+  margin-top: 4px;
+  font-size: 14px;
 }
 
 .inventorius-table thead th {
   text-align: left;
-  padding: 8px;
-  border-bottom: 2px solid #ccc;
+  padding: 8px 10px;
+  border-bottom: 1px solid #111827;
+  font-weight: 500;
+  color: #9ca3af;
+  background-color: #020617;
+}
+
+.select-col {
+  text-align: right;
+  width: 80px;
 }
 
 .inventorius-table tbody tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #020617;
+  cursor: pointer;
 }
 
 .inventorius-table td {
-  padding: 8px;
+  padding: 8px 10px;
+  color: #e5e7eb;
 }
 
 .inventorius-table tbody tr:nth-child(odd) {
-  background-color: #ffffff;
+  background-color: #020617;
 }
 
-.inventorius-table input {
-  width: 100%;
+.inventorius-table tbody tr:nth-child(even) {
+  background-color: #020617;
+}
+
+.inventorius-table tbody tr:hover {
+  background-color: #0b1120;
+}
+
+.selected-row {
+  background-color: #1d283a !important;
+}
+
+.inventorius-table input[type="radio"] {
+  width: auto;
+}
+
+/* Panels */
+
+.panel {
+  margin-top: 20px;
+  padding: 16px 18px 14px;
+  border-radius: 8px;
+  border: 1px solid #111827;
+  background-color: #020617;
+}
+
+.panel h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.panel-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #9ca3af;
+  gap: 4px;
+}
+
+/* Inputs */
+
+.panel input,
+.panel select {
+  border-radius: 4px;
+  border: 1px solid #374151;
+  padding: 6px 8px;
+  font-size: 14px;
   box-sizing: border-box;
+  background-color: #020617;
+  color: #e5e7eb;
 }
 
-.actions-container {
-  margin-top: 12px;
-  text-align: right;
+.panel input::placeholder {
+  color: #6b7280;
+}
+
+.panel input:focus,
+.panel select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.5);
+}
+
+.panel select {
+  cursor: pointer;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Extra info for deleted items */
+
+.info-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #9ca3af;
 }
