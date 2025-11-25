@@ -1,0 +1,38 @@
+.inventorius-container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.inventorius-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.inventorius-table thead th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #ccc;
+}
+
+.inventorius-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.inventorius-table td {
+  padding: 8px;
+}
+
+.inventorius-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.inventorius-table input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.actions-container {
+  margin-top: 12px;
+  text-align: right;
+}
